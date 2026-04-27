@@ -289,7 +289,6 @@ This section maps each required test file to the behavior it verifies.
 | `tests/e2e/app.spec.ts` | Full user flows: splash screen, auth redirects, signup/login, habit CRUD, streak updates, persistence after reload, logout, offline loading |
 
 ---
-
 ## Project Structure
 
 ```

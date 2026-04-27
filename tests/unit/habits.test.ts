@@ -46,4 +46,41 @@ describe('toggleHabitCompletion', () => {
     const updated = toggleHabitCompletion(habitWithDuplicates, today);
     expect(updated.completions.length).toBeLessThanOrEqual(1);
   });
+  it('removes only the specified date when multiple completions exist', () => {
+    const habit = {
+      ...baseHabit,
+      completions: [today, '2026-01-09'],
+    };
+
+    const updated = toggleHabitCompletion(habit, today);
+
+    expect(updated.completions).toEqual(['2026-01-09']);
+  });
+  it('adds a new date to existing completions', () => {
+    const habit = {
+      ...baseHabit,
+      completions: ['2026-01-09'],
+    };
+
+    const updated = toggleHabitCompletion(habit, today);
+
+    expect(updated.completions).toContain(today);
+    expect(updated.completions.length).toBe(2);
+  });
+  it('preserves other habit properties', () => {
+    const updated = toggleHabitCompletion(baseHabit, today);
+
+    expect(updated.id).toBe(baseHabit.id);
+    expect(updated.name).toBe(baseHabit.name);
+  });
+  it('keeps completions unique after adding', () => {
+    const habit = {
+      ...baseHabit,
+      completions: ['2026-01-09', today],
+    };
+
+    const updated = toggleHabitCompletion(habit, today);
+
+    expect(new Set(updated.completions).size).toBe(updated.completions.length);
+  });
 });
