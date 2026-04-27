@@ -8,10 +8,6 @@ import {
   clearSession,
 } from './storage';
 
-// ==============================
-// SIGNUP
-// ==============================
-
 export function signup(email: string, password: string): {
   success: boolean;
   error: string | null;
@@ -62,11 +58,6 @@ export function signup(email: string, password: string): {
   };
 }
 
-
-// ==============================
-// LOGIN
-// ==============================
-
 export function login(email: string, password: string): {
   success: boolean;
   error: string | null;
@@ -101,11 +92,6 @@ export function login(email: string, password: string): {
     error: null,
   };
 }
-
-
-// ==============================
-// LOGOUT
-// ==============================
 
 export function logout(): void {
   clearSession();
