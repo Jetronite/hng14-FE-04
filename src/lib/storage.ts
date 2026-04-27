@@ -2,9 +2,7 @@ import { User, Session } from '@/types/auth';
 import { Habit } from '@/types/habit';
 import { STORAGE_KEYS } from './constants';
 
-// ==============================
 // SAFE JSON HELPERS (PRIVATE)
-// ==============================
 
 function safeParse<T>(value: string | null, fallback: T): T {
   try {
@@ -18,10 +16,6 @@ function safeStringify(value: unknown): string {
   return JSON.stringify(value);
 }
 
-// ==============================
-// USERS
-// ==============================
-
 export function getUsers(): User[] {
   const raw = localStorage.getItem(STORAGE_KEYS.USERS);
   return safeParse<User[]>(raw, []);
@@ -33,10 +27,6 @@ export function saveUsers(users: User[]): void {
     safeStringify(users)
   );
 }
-
-// ==============================
-// SESSION
-// ==============================
 
 export function getSession(): Session | null {
   const raw = localStorage.getItem(STORAGE_KEYS.SESSION);
@@ -56,10 +46,6 @@ export function clearSession(): void {
     safeStringify(null)
   );
 }
-
-// ==============================
-// HABITS
-// ==============================
 
 export function getHabits(): Habit[] {
   const raw = localStorage.getItem(STORAGE_KEYS.HABITS);
