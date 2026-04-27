@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { login } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
 import clsx from 'clsx';
+import Link from "next/link";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -120,6 +121,12 @@ export default function LoginForm() {
         >
           Login
         </button>
+        <p className="text-sm text-gray-600">
+          Don't have an account?{' '}
+          <Link href="/signup" className="text-blue-600 hover:underline">
+            Sign up
+          </Link>
+        </p>
       </form>
     </div>
   );

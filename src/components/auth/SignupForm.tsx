@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { signup } from '@/lib/auth';
 import { useRouter } from 'next/navigation';
-import { ui } from '@/styles/ui';
 import clsx from 'clsx';
+import Link from "next/link";
 
 export default function SignupForm() {
   const router = useRouter();
@@ -121,6 +121,12 @@ export default function SignupForm() {
         >
           Sign Up
         </button>
+        <p className="text-sm text-gray-600">
+          Already have an account?{' '}
+          <Link href="/login" className="text-blue-600 hover:underline">
+            Login
+          </Link>
+        </p>
       </form>
     </div>
   );

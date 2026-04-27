@@ -2,8 +2,6 @@
 
 import { useRouter } from 'next/navigation';
 import { logout } from '@/lib/auth';
-import clsx from 'clsx';
-import { ui } from '@/styles/ui';
 
 export default function LogoutButton() {
   const router = useRouter();

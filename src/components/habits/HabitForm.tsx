@@ -66,7 +66,6 @@ export default function HabitForm({ onSave, initialData, onCancel }: Props) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Drink Water"
-          required
           aria-label="Habit name"
           className="w-full mt-2 px-4 py-3 md:py-4 text-sm md:text-base rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />

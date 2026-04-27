@@ -27,6 +27,13 @@ describe('calculateCurrentStreak', () => {
     ).toBe(2);
   });
 
+  it('ignores future dates relative to today', () => {
+  const future = '2026-01-11';
+  expect(
+    calculateCurrentStreak([future, today, yesterday], today)
+  ).toBe(2);
+  });
+
   it('breaks the streak when a calendar day is missing', () => {
     expect(
       calculateCurrentStreak([today, twoDaysAgo], today)
