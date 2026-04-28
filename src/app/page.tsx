@@ -17,7 +17,7 @@ export default function HomePage() {
       } else {
         router.replace('/login');
       }
-    }, 1000); // 800ms–2000ms required
+    }, 1899); // 800ms–2000ms required
 
     return () => clearTimeout(timer);
   }, [router]);
