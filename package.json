@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:unit": "vitest run --coverage",
-    "test:integration": "cross-env VITEST_MODE=integration vitest run --cove",
+    "test:integration": "cross-env VITEST_MODE=integration vitest run --coverage",
     "test:e2e": "playwright test",
     "test": "npm run test:unit && npm run test:integration && npm run test:e2e"
   },
